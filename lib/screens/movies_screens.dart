@@ -21,8 +21,8 @@ class MoviesScreens extends StatelessWidget {
               color: Colors.red,
             ),
             onPressed: () {
-              locator<NavigationService>().showSnackBar();
-              // locator<NavigationService>().navigate(const FavScreen());
+              // locator<NavigationService>().showSnackBar();
+              locator<NavigationService>().navigate(const FavScreen());
             },
           ),
           const IconButton(
