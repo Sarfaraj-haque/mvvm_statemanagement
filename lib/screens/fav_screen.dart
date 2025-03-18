@@ -10,6 +10,7 @@ class FavScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text('Favourite Movies'),
         actions: const [
           IconButton(
@@ -22,7 +23,7 @@ class FavScreen extends StatelessWidget {
         ],
       ),
       body: ListView.builder(
-        itemBuilder: (context, index) => 
+        itemBuilder: (context, index) =>
             // child: CachedImageWidget(
             //   imgUrl: MyAppConst.roadImg,
             //   boxFit: BoxFit.cover,
@@ -31,6 +32,5 @@ class FavScreen extends StatelessWidget {
         itemCount: 5,
       ),
     );
-    
   }
 }

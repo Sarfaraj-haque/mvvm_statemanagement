@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm_statemanagement/constants/my_app.dart';
 import 'package:mvvm_statemanagement/constants/my_app_icons.dart';
+import 'package:mvvm_statemanagement/screens/movie_details_screen.dart';
+import 'package:mvvm_statemanagement/services/init_get.dart';
+import 'package:mvvm_statemanagement/services/navigation_service.dart';
 import 'package:mvvm_statemanagement/widgets/cached_image.dart';
 import 'package:mvvm_statemanagement/widgets/fav_btn.dart';
 import 'package:mvvm_statemanagement/widgets/geners_list.dart';
@@ -16,7 +19,9 @@ class MoviesWidget extends StatelessWidget {
         color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(12.0),
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            locator<NavigationService>().navigate(const MovieDetailsScreen());
+          },
           borderRadius: BorderRadius.circular(12.0),
           child: Padding(
             padding: const EdgeInsets.all(8.0),

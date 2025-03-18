@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mvvm_statemanagement/constants/my_app_icons.dart';
+import 'package:mvvm_statemanagement/screens/fav_screen.dart';
+import 'package:mvvm_statemanagement/services/init_get.dart';
+import 'package:mvvm_statemanagement/services/navigation_service.dart';
 import 'package:mvvm_statemanagement/widgets/movies_widget.dart';
 
 class MoviesScreens extends StatelessWidget {
@@ -11,15 +14,18 @@ class MoviesScreens extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Popular Movies'),
-        actions: const [
+        actions: [
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               AppIcons.favRounded,
               color: Colors.red,
             ),
-            onPressed: null,
+            onPressed: () {
+              locator<NavigationService>().showSnackBar();
+              // locator<NavigationService>().navigate(const FavScreen());
+            },
           ),
-          IconButton(
+          const IconButton(
             icon: Icon(
               AppIcons.darkMode,
               color: Colors.red,
@@ -29,7 +35,7 @@ class MoviesScreens extends StatelessWidget {
         ],
       ),
       body: ListView.builder(
-        itemBuilder: (context, index) =>const 
+        itemBuilder: (context, index) => const
             // child: CachedImageWidget(
             //   imgUrl: MyAppConst.roadImg,
             //   boxFit: BoxFit.cover,
